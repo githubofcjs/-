@@ -133,3 +133,23 @@ with(faithful, plot(eruptions, waiting)) ## Create plot on screen device
 title(main = "Old Faithful Geyser data") ## Add a main title
 dev.copy(png, file = "geyserplot.png") ## Copy my plot to a PNG file
 dev.off() ## Don't forget to close the PNG device!
+#例子：
+目录中名为mygraph.pdf的PDF文件中：
+
+> pdf("mypdf")
+
+> attach(mtcars)
+
+> plot(wt,mpg)
+
+> abline(lm(mpg~wt))
+
+> title("hahahah")
+
+> detach(mtcars)
+
+> dev.off()
+
+#除了pdf()，还可以使用函数win.metafile()、png()、jpeg()、bmp()、tiff()、xfig()
+
+和postscript()将图形保存为其他格式。
